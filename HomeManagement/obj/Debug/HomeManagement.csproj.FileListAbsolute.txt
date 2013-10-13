@@ -1,0 +1,10 @@
+C:\Programming\HomeManagement\HomeManagement\bin\Debug\HomeManagement.dll
+C:\Programming\HomeManagement\HomeManagement\bin\Debug\HomeManagement.pdb
+C:\Programming\HomeManagement\HomeManagement\obj\Debug\ResolveAssemblyReference.cache
+C:\Programming\HomeManagement\HomeManagement\obj\Debug\HomeManagement.dll
+C:\Programming\HomeManagement\HomeManagement\obj\Debug\HomeManagement.pdb
+C:\Git\AppHarbor\HomeManagement\HomeManagement\bin\Debug\HomeManagement.dll
+C:\Git\AppHarbor\HomeManagement\HomeManagement\bin\Debug\HomeManagement.pdb
+C:\Git\AppHarbor\HomeManagement\HomeManagement\obj\Debug\ResolveAssemblyReference.cache
+C:\Git\AppHarbor\HomeManagement\HomeManagement\obj\Debug\HomeManagement.dll
+C:\Git\AppHarbor\HomeManagement\HomeManagement\obj\Debug\HomeManagement.pdb

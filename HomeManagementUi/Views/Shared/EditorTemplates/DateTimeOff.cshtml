@@ -1,0 +1,25 @@
+﻿@model Nullable<System.DateTime>
+@using HomeManagementUi.Infrustructure
+@if (Model.HasValue)
+{
+    @Html.TextBox("", String.Format("{0:MM/dd/yyyy h:mm:ss tt}", Model.Value), new { @class = "datefield", @style = "width:400px;", type = "date" })
+}
+else
+{
+    @Html.TextBox("", null, new { @class = "datefield", @style = "width:400px;", type = "date" })
+}
+@{
+    string name = ViewData.TemplateInfo.HtmlFieldPrefix;
+    string id = name.Replace(".", "_").Replace("[", "_").Replace("]", "_");
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#@id").datetimepicker
+            ({
+                controlType: 'select',
+                dateFormat: 'mm/dd/yy',
+                timeFormat: 'h:mm:ss tt'
+            });
+
+    });
+</script>
