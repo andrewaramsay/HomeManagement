@@ -1,0 +1,79 @@
+﻿@model IEnumerable<HomeManagement.Domain.Task>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>
+    Index</h2>
+@if (ViewBag.ShowingCompleted)
+{
+    <p>
+        @Html.ActionLink("Show active tasks only", "Index", new { })
+    </p>
+}
+else
+{
+    <p>
+        @Html.ActionLink("Show completed tasks", "Index", new { showCompleted = true })
+    </p>
+}
+<table>
+    <tr>
+        <th>
+            Complete
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Entered
+        </th>
+        <th>
+            Assigned
+        </th>
+        <th>
+            Completed
+        </th>
+        <th>
+            Assigned To
+        </th>
+        <th>
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Completed)
+            </td>
+            <td>
+                @{
+           var description = new System.Text.StringBuilder(item.Description);
+           if (item.Description.Length > ViewBag.MaxDescriptionLength)
+           {
+               description.Remove(ViewBag.MaxDescriptionLength - 3, item.Description.Length - (ViewBag.MaxDescriptionLength - 3));
+               description.Append("...");
+           }
+                }
+                @Html.ActionLink(description.ToString(), "Edit", new { id = item.Id })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateEntered)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateAssigned)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateCompleted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Person.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>
+<p>
+    @Html.ActionLink("New Task", "Create")
+</p>

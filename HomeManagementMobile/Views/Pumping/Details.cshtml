@@ -1,0 +1,36 @@
+﻿@model HomeManagement.Domain.Pumping
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Pumping</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Milliliters)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Milliliters)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BreastfeedingAttempt)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BreastfeedingAttempt)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BreastfeedingComments)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BreastfeedingComments)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

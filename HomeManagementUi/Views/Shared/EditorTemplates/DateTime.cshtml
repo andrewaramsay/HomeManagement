@@ -1,0 +1,17 @@
+﻿@model Nullable<System.DateTime>
+@if (Model.HasValue)
+{
+    // <input name="mode7" id="mode7" type="text" data-role="datebox" data-options='{"mode":"timeflipbox", "useNewStyle":true}' />
+    //@Html.TextBox("", String.Format("{0:MM/dd/yyyy h:mm:ss tt}", Model.Value), new { @style = "width:400px;", type = "date", data_role = "datebox", data_options = @"{""mode"":'timeflipbox', 'useNewStyle':true}" })
+    
+   <input data-options='{"mode":"timeflipbox" }' data-role="datebox" data-val="true" data-val-required="The StartTime field is required." id="StartTime" name="StartTime" style="width:400px;" type="date" value="" />
+}
+else
+{
+   <input data-options='{"mode":"timeflipbox" }' data-role="datebox" data-val="true" data-val-required="The StartTime field is required." id="StartTime" name="StartTime" style="width:400px;" type="date" value="" />
+    //@Html.TextBox("", null, new { @style = "width:400px;", type = "date", data_role = "datebox", data_options = "{\"mode\":\"timeflipbox\", \"useNewStyle\":true}" })
+}
+@{
+    string name = ViewData.TemplateInfo.HtmlFieldPrefix;
+    string id = name.Replace(".", "_").Replace("[", "_").Replace("]", "_");
+}

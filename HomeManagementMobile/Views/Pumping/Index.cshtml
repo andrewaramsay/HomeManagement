@@ -1,0 +1,53 @@
+﻿@model IEnumerable<HomeManagement.Domain.Pumping>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>
+    Index</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@*<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PumpingTimes.First().StartTime)
+        </th>
+        <th>
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartTime)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    
+    }
+</table>*@
+<ul data-role="listview" data-filter="true">
+    @foreach (var item in Model)
+    {
+        <li><a href="@Url.Action("Edit", new { item.Id })">
+            <h2>@item.StartTime.ToString("M/d/yy hh:mm tt")
+                @if (@item.EndTime != null)
+                {
+                    <text> - </text>
+                    @item.EndTime.Value.ToString("hh:mm tt")
+                }
+            </h2>
+            <p>
+                @if (@item.Milliliters != null)
+                {
+                    @Html.DisplayFor(m => item.Milliliters) <text> mils - </text>
+                }
+                @Html.DisplayFor(m => item.BreastfeedingComments)
+            </p>
+        </a></li>
+    }
+</ul>
