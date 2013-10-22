@@ -19,7 +19,7 @@ namespace HomeManagementMobile
     {
         protected void Application_Start()
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<HomeManagementContextz, HomeManagementConfiguration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<HomeManagementContext, HomeManagementConfiguration>());
 
             AreaRegistration.RegisterAllAreas();
 
