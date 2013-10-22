@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.Data.Entity;
+using HomeManagement.DataLayer;
+using HomeManagement.DataLayer.Migrations;
 
 namespace HomeManagementUi
 {
@@ -31,6 +34,8 @@ namespace HomeManagementUi
 
         protected void Application_Start()
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<HomeManagementContext, HomeManagementConfiguration>());
+
             AreaRegistration.RegisterAllAreas();
 
             RegisterGlobalFilters(GlobalFilters.Filters);

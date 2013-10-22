@@ -46,6 +46,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HomeManagementContext.cs" />
+    <Compile Include="Migrations\201310132105044_InitialCreate.cs" />
+    <Compile Include="Migrations\201310132105044_InitialCreate.Designer.cs">
+      <DependentUpon>201310132105044_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\HomeManagementConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -57,6 +62,11 @@
       <Project>{0576A619-E07C-4596-9256-F69EC209F6B4}</Project>
       <Name>HomeManagement</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201310132105044_InitialCreate.resx">
+      <DependentUpon>201310132105044_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

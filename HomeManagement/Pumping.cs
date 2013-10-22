@@ -8,6 +8,12 @@ namespace HomeManagement.Domain
 {
     public class Pumping
     {
+        [DisplayFormat(DataFormatString="{0:yyyy-MM-ddTHH:mm:ss.fffffffzzz}", ApplyFormatInEditMode = true)]
+        public virtual DateTime StartTime { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-ddTHH:mm:ss.fffffffzzz}", ApplyFormatInEditMode = true)]
+        public virtual DateTime? EndTime { get; set; }
+
         public virtual int Id { get; set; }
         public virtual int? Milliliters { get; set; }
         public virtual bool? BreastfeedingAttempt { get; set; }
@@ -18,7 +24,9 @@ namespace HomeManagement.Domain
     public class PumpingTime
     {
         public virtual int Id { get; set; }
+
         public virtual DateTime StartTime { get; set; }
+
         public virtual DateTime? EndTime { get; set; }
 
         public virtual int PumpingId { get; set; }
