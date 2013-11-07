@@ -4,6 +4,11 @@
     ViewBag.Title = "Details";
 }
 
+@section Header
+{
+    @Html.ActionLink("Back", "Index")
+}
+
 <h2>Details</h2>
 
 <fieldset>
@@ -31,6 +36,5 @@
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id })
 </p>

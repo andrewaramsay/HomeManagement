@@ -2,6 +2,15 @@
 @{
     ViewBag.Title = "Edit";
 }
+
+@section Header
+{
+    @Html.ActionLink("Back", "Index")
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
 <h2>
     Edit</h2>
 @using (Html.BeginForm())
@@ -74,10 +83,4 @@
             <input type="submit" value="Save" />
         </p>
     </fieldset>
-}
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
 }
