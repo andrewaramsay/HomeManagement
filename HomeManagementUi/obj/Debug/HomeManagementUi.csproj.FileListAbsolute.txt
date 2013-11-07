@@ -20,3 +20,14 @@ C:\Git\AppHarbor\HomeManagement\HomeManagementUi\bin\EntityFramework.xml
 C:\Git\AppHarbor\HomeManagement\HomeManagementUi\obj\Debug\ResolveAssemblyReference.cache
 C:\Git\AppHarbor\HomeManagement\HomeManagementUi\obj\Debug\HomeManagementUi.dll
 C:\Git\AppHarbor\HomeManagement\HomeManagementUi\obj\Debug\HomeManagementUi.pdb
+C:\Git\HomeManagement\HomeManagementUi\bin\HomeManagementUi.dll
+C:\Git\HomeManagement\HomeManagementUi\bin\HomeManagementUi.pdb
+C:\Git\HomeManagement\HomeManagementUi\bin\DataLayer.dll
+C:\Git\HomeManagement\HomeManagementUi\bin\EntityFramework.dll
+C:\Git\HomeManagement\HomeManagementUi\bin\HomeManagement.dll
+C:\Git\HomeManagement\HomeManagementUi\bin\DataLayer.pdb
+C:\Git\HomeManagement\HomeManagementUi\bin\HomeManagement.pdb
+C:\Git\HomeManagement\HomeManagementUi\bin\EntityFramework.xml
+C:\Git\HomeManagement\HomeManagementUi\obj\Debug\ResolveAssemblyReference.cache
+C:\Git\HomeManagement\HomeManagementUi\obj\Debug\HomeManagementUi.dll
+C:\Git\HomeManagement\HomeManagementUi\obj\Debug\HomeManagementUi.pdb

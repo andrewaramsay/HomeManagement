@@ -8,3 +8,8 @@ C:\Git\AppHarbor\HomeManagement\HomeManagement\bin\Debug\HomeManagement.pdb
 C:\Git\AppHarbor\HomeManagement\HomeManagement\obj\Debug\ResolveAssemblyReference.cache
 C:\Git\AppHarbor\HomeManagement\HomeManagement\obj\Debug\HomeManagement.dll
 C:\Git\AppHarbor\HomeManagement\HomeManagement\obj\Debug\HomeManagement.pdb
+C:\Git\HomeManagement\HomeManagement\bin\Debug\HomeManagement.dll
+C:\Git\HomeManagement\HomeManagement\bin\Debug\HomeManagement.pdb
+C:\Git\HomeManagement\HomeManagement\obj\Debug\ResolveAssemblyReference.cache
+C:\Git\HomeManagement\HomeManagement\obj\Debug\HomeManagement.dll
+C:\Git\HomeManagement\HomeManagement\obj\Debug\HomeManagement.pdb

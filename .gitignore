@@ -35,7 +35,11 @@ x64/
 *.log
 *.vspscc
 *.vssscc
+*.pdb
+*.dll
+*.exe
 .builds
+
 
 # Visual C++ cache files
 ipch/

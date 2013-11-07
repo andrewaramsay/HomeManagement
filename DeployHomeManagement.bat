@@ -1,0 +1,8 @@
+xcopy /Y HomeManagementMobile\bin "C:\Documents and Settings\ForumAdmin\My Documents\My Web Sites\Home Management\bin\"
+xcopy /Y HomeManagementMobile\Content "C:\Documents and Settings\ForumAdmin\My Documents\My Web Sites\Home Management\Content\"
+xcopy /Y HomeManagementMobile\Scripts "C:\Documents and Settings\ForumAdmin\My Documents\My Web Sites\Home Management\Scripts\"
+xcopy /Y HomeManagementMobile\Views "C:\Documents and Settings\ForumAdmin\My Documents\My Web Sites\Home Management\Views\"
+xcopy /Y HomeManagementMobile\Global.asax "C:\Documents and Settings\ForumAdmin\My Documents\My Web Sites\Home Management\"
+xcopy /Y HomeManagementMobile\favicon.ico "C:\Documents and Settings\ForumAdmin\My Documents\My Web Sites\Home Management\"
+xcopy /Y HomeManagementMobile\packages.config "C:\Documents and Settings\ForumAdmin\My Documents\My Web Sites\Home Management\"
+xcopy /Y HomeManagementMobile\Web.config "C:\Documents and Settings\ForumAdmin\My Documents\My Web Sites\Home Management\"

@@ -22,3 +22,15 @@ C:\Git\AppHarbor\HomeManagement\TestConsoleDriver\bin\Debug\EntityFramework.xml
 C:\Git\AppHarbor\HomeManagement\TestConsoleDriver\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Git\AppHarbor\HomeManagement\TestConsoleDriver\obj\x86\Debug\TestConsoleDriver.exe
 C:\Git\AppHarbor\HomeManagement\TestConsoleDriver\obj\x86\Debug\TestConsoleDriver.pdb
+C:\Git\HomeManagement\TestConsoleDriver\bin\Debug\TestConsoleDriver.exe.config
+C:\Git\HomeManagement\TestConsoleDriver\bin\Debug\TestConsoleDriver.exe
+C:\Git\HomeManagement\TestConsoleDriver\bin\Debug\TestConsoleDriver.pdb
+C:\Git\HomeManagement\TestConsoleDriver\bin\Debug\DataLayer.dll
+C:\Git\HomeManagement\TestConsoleDriver\bin\Debug\EntityFramework.dll
+C:\Git\HomeManagement\TestConsoleDriver\bin\Debug\HomeManagement.dll
+C:\Git\HomeManagement\TestConsoleDriver\bin\Debug\DataLayer.pdb
+C:\Git\HomeManagement\TestConsoleDriver\bin\Debug\HomeManagement.pdb
+C:\Git\HomeManagement\TestConsoleDriver\bin\Debug\EntityFramework.xml
+C:\Git\HomeManagement\TestConsoleDriver\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Git\HomeManagement\TestConsoleDriver\obj\x86\Debug\TestConsoleDriver.exe
+C:\Git\HomeManagement\TestConsoleDriver\obj\x86\Debug\TestConsoleDriver.pdb

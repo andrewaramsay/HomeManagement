@@ -21,3 +21,16 @@ C:\Git\AppHarbor\HomeManagement\DataLayer\obj\Debug\DataLayer.pdb
 C:\Git\AppHarbor\HomeManagement\DataLayer\obj\Debug\HomeManagement.DataLayer.Migrations.InitialCreate.resources
 C:\Git\AppHarbor\HomeManagement\DataLayer\obj\Debug\GenerateResource.read.1.tlog
 C:\Git\AppHarbor\HomeManagement\DataLayer\obj\Debug\GenerateResource.write.1.tlog
+C:\Git\HomeManagement\DataLayer\bin\Debug\DataLayer.dll.config
+C:\Git\HomeManagement\DataLayer\bin\Debug\DataLayer.dll
+C:\Git\HomeManagement\DataLayer\bin\Debug\DataLayer.pdb
+C:\Git\HomeManagement\DataLayer\bin\Debug\EntityFramework.dll
+C:\Git\HomeManagement\DataLayer\bin\Debug\HomeManagement.dll
+C:\Git\HomeManagement\DataLayer\bin\Debug\HomeManagement.pdb
+C:\Git\HomeManagement\DataLayer\bin\Debug\EntityFramework.xml
+C:\Git\HomeManagement\DataLayer\obj\Debug\ResolveAssemblyReference.cache
+C:\Git\HomeManagement\DataLayer\obj\Debug\HomeManagement.DataLayer.Migrations.InitialCreate.resources
+C:\Git\HomeManagement\DataLayer\obj\Debug\GenerateResource.read.1.tlog
+C:\Git\HomeManagement\DataLayer\obj\Debug\GenerateResource.write.1.tlog
+C:\Git\HomeManagement\DataLayer\obj\Debug\DataLayer.dll
+C:\Git\HomeManagement\DataLayer\obj\Debug\DataLayer.pdb
