@@ -42,6 +42,20 @@ namespace HomeManagementMobile.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-ddTHH:mm:ss.fffffffzzz}", ApplyFormatInEditMode = true)]
         public DateTime? EndTime { get; set; }
 
+        public string Duration
+        {
+            get
+            {
+                if (EndTime == null)
+                    return null;
+
+                var duration = EndTime.Value.Subtract(StartTime);
+
+
+                return string.Format("{0}:{1} mins", (int)duration.TotalMinutes, duration.Seconds);
+            }
+        }
+
         public int? Milliliters { get; set; }
         public bool? BreastfeedingAttempt { get; set; }
         public string BreastfeedingComments { get; set; }

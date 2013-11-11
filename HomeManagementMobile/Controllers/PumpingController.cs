@@ -26,22 +26,6 @@ namespace HomeManagementMobile.Controllers
         }
 
         //
-        // GET: /Pumping/Details/5
-
-        public ActionResult Details(int id = 0)
-        {
-            Pumping pumping = db.Pumpings.Find(id);
-            if (pumping == null)
-            {
-                return HttpNotFound();
-            }
-
-            var pumpingViewModle = new PumpingViewModel(pumping);
-
-            return View(pumping);
-        }
-
-        //
         // GET: /Pumping/Create
 
         public ActionResult Create()
@@ -91,31 +75,6 @@ namespace HomeManagementMobile.Controllers
                 return RedirectToAction("Index");
             }
             return View(pumping);
-        }
-
-        //
-        // GET: /Pumping/Delete/5
-
-        public ActionResult Delete(int id = 0)
-        {
-            Pumping pumping = db.Pumpings.Find(id);
-            if (pumping == null)
-            {
-                return HttpNotFound();
-            }
-            return View(new PumpingViewModel(pumping));
-        }
-
-        //
-        // POST: /Pumping/Delete/5
-
-        [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Pumping pumping = db.Pumpings.Find(id);
-            db.Pumpings.Remove(pumping);
-            db.SaveChanges();
-            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

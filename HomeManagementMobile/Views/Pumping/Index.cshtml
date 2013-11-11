@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<HomeManagementMobile.Models.PumpingViewModel>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "All Pumpings";
 }
 @section Header
 {
@@ -20,6 +20,12 @@
                     @item.EndTime.Value.ToString("hh:mm tt")
                 }
             </h2>
+            @if (item.Duration != null)
+            {
+                <p>
+                    @item.Duration
+                </p>
+            }
             <p>
                 @if (item.Milliliters != null)
                 {
@@ -30,7 +36,7 @@
             @if (item.FormulaAmount != null)
             {
                 <p>
-                    @item.FormulaAmount tsp
+                    @Math.Round(item.FormulaAmount.Value, 2) tsp
                 </p>
             }
         </a></li>

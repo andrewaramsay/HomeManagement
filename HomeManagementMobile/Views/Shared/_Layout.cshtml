@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     @Styles.Render("~/Content/mobileCss", "~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
     <div data-role="page" data-theme="b">
@@ -20,7 +21,6 @@
             @RenderBody()
         </div>
     </div>
-    @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jquerymobile")
     @RenderSection("scripts", required: false)

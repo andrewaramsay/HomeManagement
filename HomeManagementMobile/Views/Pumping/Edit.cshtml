@@ -1,6 +1,6 @@
 ﻿@model HomeManagementMobile.Models.PumpingViewModel
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit Pumping";
 }
 
 @section Header
@@ -11,14 +11,11 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
-<h2>
-    Edit</h2>
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Pumping</legend>
         @Html.HiddenFor(model => model.Id)
         @* TODO: Figure out how to use a partial view here, and use AJAX to add new lines *@
        @* @if (Model.PumpingTimes != null)
