@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using HomeManagement.Domain;
 using HomeManagement.DataLayer;
+using HomeManagementMobile.Models;
 
 namespace HomeManagementMobile.Controllers
 {
@@ -19,7 +20,9 @@ namespace HomeManagementMobile.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Pumpings.ToList());
+            var pumpingsViewModels = from pumping in db.Pumpings.ToArray()
+                                     select new PumpingViewModel(pumping);
+            return View(pumpingsViewModels);
         }
 
         //
@@ -32,6 +35,9 @@ namespace HomeManagementMobile.Controllers
             {
                 return HttpNotFound();
             }
+
+            var pumpingViewModle = new PumpingViewModel(pumping);
+
             return View(pumping);
         }
 
@@ -47,11 +53,11 @@ namespace HomeManagementMobile.Controllers
         // POST: /Pumping/Create
 
         [HttpPost]
-        public ActionResult Create(Pumping pumping)
+        public ActionResult Create(PumpingViewModel pumping)
         {
             if (ModelState.IsValid)
             {
-                db.Pumpings.Add(pumping);
+                db.Pumpings.Add(pumping.ToPumping());
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -69,18 +75,18 @@ namespace HomeManagementMobile.Controllers
             {
                 return HttpNotFound();
             }
-            return View(pumping);
+            return View(new PumpingViewModel(pumping));
         }
 
         //
         // POST: /Pumping/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(Pumping pumping, FormCollection collection)
+        public ActionResult Edit(PumpingViewModel pumping, FormCollection collection)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(pumping).State = EntityState.Modified;
+                db.Entry(pumping.ToPumping()).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -97,7 +103,7 @@ namespace HomeManagementMobile.Controllers
             {
                 return HttpNotFound();
             }
-            return View(pumping);
+            return View(new PumpingViewModel(pumping));
         }
 
         //
