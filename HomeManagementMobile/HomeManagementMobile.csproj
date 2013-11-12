@@ -264,9 +264,6 @@
     <Content Include="Views\Pumping\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Pumping\Create.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Pumping\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>

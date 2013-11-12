@@ -1,11 +1,11 @@
 ﻿@model HomeManagementMobile.Models.PumpingViewModel
 @{
-    ViewBag.Title = "Edit Pumping";
     ViewBag.ParentController = "Pumping";
     ViewBag.ParentAction = "Index";
 }
 
-@section Scripts {
+@section Scripts 
+{
     @Scripts.Render("~/bundles/jqueryval")
 }
 @using (Html.BeginForm())
@@ -13,29 +13,10 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        @Html.HiddenFor(model => model.Id)
-        @* TODO: Figure out how to use a partial view here, and use AJAX to add new lines *@
-       @* @if (Model.PumpingTimes != null)
+        @if (ViewBag.EmitModelId == true)
         {
-            for (int i = 0; i < Model.PumpingTimes.Count(); i++)
-            {
-            <div class="editor-label">
-                @Html.LabelFor(model => model.PumpingTimes.ElementAt(i).StartTime)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.PumpingTimes.ElementAt(i).StartTime)
-                @Html.ValidationMessageFor(model => model.PumpingTimes.ElementAt(i).StartTime)
-            </div>
-            <div class="editor-label">
-                @Html.LabelFor(model => model.PumpingTimes.ElementAt(i).EndTime)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.PumpingTimes.ElementAt(i).EndTime)
-                @Html.ValidationMessageFor(model => model.PumpingTimes.ElementAt(i).EndTime)
-            </div>
-            }
-        }*@
-        
+            @Html.HiddenFor(model => model.Id)
+        }
         <div class="editor-label">
             @Html.LabelFor(model => model.StartTime)
         </div>
@@ -50,6 +31,14 @@
         <div class="editor-field">
             @Html.EditorFor(model => model.EndTime)
             @Html.ValidationMessageFor(model => model.EndTime)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FortifyTime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FortifyTime)
+            @Html.ValidationMessageFor(model => model.FortifyTime)
         </div>
 
         <div class="editor-label">
@@ -74,7 +63,7 @@
             @Html.ValidationMessageFor(model => model.BreastfeedingComments)
         </div>
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="@ViewBag.SubmitButtonText" />
         </p>
     </fieldset>
 }

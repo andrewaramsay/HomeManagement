@@ -10,6 +10,7 @@ namespace HomeManagement.Domain
     {
         public virtual DateTime StartTime { get; set; }
         public virtual DateTime? EndTime { get; set; }
+        public virtual DateTime? FortifyTime { get; set; }
         public virtual int Id { get; set; }
         public virtual int? Milliliters { get; set; }
         public virtual bool? BreastfeedingAttempt { get; set; }

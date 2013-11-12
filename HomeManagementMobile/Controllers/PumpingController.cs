@@ -21,6 +21,7 @@ namespace HomeManagementMobile.Controllers
         public ActionResult Index()
         {
             var pumpingsViewModels = from pumping in db.Pumpings.ToArray()
+                                     orderby pumping.StartTime descending
                                      select new PumpingViewModel(pumping);
             return View(pumpingsViewModels);
         }
@@ -30,7 +31,10 @@ namespace HomeManagementMobile.Controllers
 
         public ActionResult Create()
         {
-            return View();
+            ViewBag.Title = "Create Pumping";
+            ViewBag.SubmitButtonText = "Create";
+            ViewBag.EmitModelId = false;
+            return View("Edit");
         }
 
         //
@@ -39,6 +43,9 @@ namespace HomeManagementMobile.Controllers
         [HttpPost]
         public ActionResult Create(PumpingViewModel pumping)
         {
+            ViewBag.Title = "Create Pumping";
+            ViewBag.SubmitButtonText = "Create";
+            ViewBag.EmitModelId = false;
             if (ModelState.IsValid)
             {
                 db.Pumpings.Add(pumping.ToPumping());
@@ -46,7 +53,7 @@ namespace HomeManagementMobile.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(pumping);
+            return View("Edit", pumping);
         }
 
         //
@@ -54,12 +61,15 @@ namespace HomeManagementMobile.Controllers
 
         public ActionResult Edit(int id = 0)
         {
+            ViewBag.Title = "Edit Pumping";
+            ViewBag.SubmitButtonText = "Save";
+            ViewBag.EmitModelId = true;
             Pumping pumping = db.Pumpings.Find(id);
             if (pumping == null)
             {
                 return HttpNotFound();
             }
-            return View(new PumpingViewModel(pumping));
+            return View("Edit", new PumpingViewModel(pumping));
         }
 
         //
@@ -68,13 +78,16 @@ namespace HomeManagementMobile.Controllers
         [HttpPost]
         public ActionResult Edit(PumpingViewModel pumping, FormCollection collection)
         {
+            ViewBag.Title = "Edit Pumping";
+            ViewBag.SubmitButtonText = "Save";
+            ViewBag.EmitModelId = true;
             if (ModelState.IsValid)
             {
                 db.Entry(pumping.ToPumping()).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(pumping);
+            return View("Edit", pumping);
         }
 
         protected override void Dispose(bool disposing)

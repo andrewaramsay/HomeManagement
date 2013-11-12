@@ -19,6 +19,7 @@ namespace HomeManagementMobile.Models
             EndTime = pumping.EndTime;
             BreastfeedingAttempt = pumping.BreastfeedingAttempt;
             BreastfeedingComments = pumping.BreastfeedingComments;
+            FortifyTime = pumping.FortifyTime;
         }
 
         public Pumping ToPumping()
@@ -30,7 +31,8 @@ namespace HomeManagementMobile.Models
                 StartTime = this.StartTime,
                 EndTime = this.EndTime,
                 BreastfeedingAttempt = this.BreastfeedingAttempt,
-                BreastfeedingComments = this.BreastfeedingComments
+                BreastfeedingComments = this.BreastfeedingComments,
+                FortifyTime = this.FortifyTime
             };
         }
 
@@ -42,6 +44,9 @@ namespace HomeManagementMobile.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-ddTHH:mm:ss.fffffffzzz}", ApplyFormatInEditMode = true)]
         public DateTime? EndTime { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-ddTHH:mm:ss.fffffffzzz}", ApplyFormatInEditMode = true)]
+        public DateTime? FortifyTime { get; set; }
+
         public string Duration
         {
             get
@@ -52,7 +57,7 @@ namespace HomeManagementMobile.Models
                 var duration = EndTime.Value.Subtract(StartTime);
 
 
-                return string.Format("{0}:{1} mins", (int)duration.TotalMinutes, duration.Seconds);
+                return string.Format("{0} mins", (int)duration.TotalMinutes);
             }
         }
 
