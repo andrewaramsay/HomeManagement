@@ -3,7 +3,13 @@
     ViewBag.ParentController = "Pumping";
     ViewBag.ParentAction = "Index";
 }
-
+@section Header
+{
+    @if (ViewBag.EmitModelId == true)
+    {
+        @Html.ActionLink("Delete", "Delete", "Pumping", new { Model.Id }, new { @class = "ui-bnt-right", data_icon = "delete", data_iconpos = "right" })
+    }
+}
 @section Scripts 
 {
     @Scripts.Render("~/bundles/jqueryval")
@@ -24,7 +30,6 @@
             @Html.EditorFor(model => model.StartTime)
             @Html.ValidationMessageFor(model => model.StartTime)
         </div>
-
         <div class="editor-label">
             @Html.LabelFor(model => model.EndTime)
         </div>
@@ -32,7 +37,6 @@
             @Html.EditorFor(model => model.EndTime)
             @Html.ValidationMessageFor(model => model.EndTime)
         </div>
-        
         <div class="editor-label">
             @Html.LabelFor(model => model.FortifyTime)
         </div>
@@ -40,7 +44,6 @@
             @Html.EditorFor(model => model.FortifyTime)
             @Html.ValidationMessageFor(model => model.FortifyTime)
         </div>
-
         <div class="editor-label">
             @Html.LabelFor(model => model.Milliliters)
         </div>

@@ -64,7 +64,7 @@ namespace HomeManagementMobile.Controllers
             ViewBag.Title = "Edit Pumping";
             ViewBag.SubmitButtonText = "Save";
             ViewBag.EmitModelId = true;
-            Pumping pumping = db.Pumpings.Find(id);
+            var pumping = db.Pumpings.Find(id);
             if (pumping == null)
             {
                 return HttpNotFound();
@@ -88,6 +88,19 @@ namespace HomeManagementMobile.Controllers
                 return RedirectToAction("Index");
             }
             return View("Edit", pumping);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var pumping = db.Pumpings.Find(id);
+            if (pumping == null)
+            {
+                return HttpNotFound();
+            }
+
+            db.Pumpings.Remove(pumping);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
