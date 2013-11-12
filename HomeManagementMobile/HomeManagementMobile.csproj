@@ -264,16 +264,10 @@
     <Content Include="Views\Pumping\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Pumping\Details.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Pumping\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Pumping\Edit.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Pumping\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />

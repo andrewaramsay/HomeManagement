@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<HomeManagementMobile.Models.PumpingViewModel>
 @{
     ViewBag.Title = "All Pumpings";
+    ViewBag.ParentController = "Home";
+    ViewBag.ParentAction = "Index";
 }
 @section Header
 {
-    @Html.ActionLink("Back", "Index", "Home")
+    @Html.ActionLink("Create", "Create", "Pumping", null, new { @class = "ui-bnt-right", data_icon = "plus", data_iconpos = "right" })
 }
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <ul data-role="listview" data-filter="true">
     @foreach (var item in Model)
     {

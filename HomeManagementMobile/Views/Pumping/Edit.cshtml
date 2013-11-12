@@ -1,11 +1,8 @@
 ﻿@model HomeManagementMobile.Models.PumpingViewModel
 @{
     ViewBag.Title = "Edit Pumping";
-}
-
-@section Header
-{
-    @Html.ActionLink("Back", "Index")
+    ViewBag.ParentController = "Pumping";
+    ViewBag.ParentAction = "Index";
 }
 
 @section Scripts {

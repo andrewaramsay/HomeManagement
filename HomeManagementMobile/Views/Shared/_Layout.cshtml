@@ -12,6 +12,10 @@
     <div data-role="page" data-theme="b">
         <div data-role="header">
             <h1>@ViewBag.Title</h1>
+            @if (ViewBag.ParentController != null && ViewBag.ParentAction != null)
+            {
+                @Html.ActionLink("Back", (string)ViewBag.ParentAction, (string)ViewBag.ParentController, null, new { data_icon = "arrow-l", data_iconpos = "left" })
+            }
             @if (IsSectionDefined("Header"))
             {
                 @RenderSection("Header")
