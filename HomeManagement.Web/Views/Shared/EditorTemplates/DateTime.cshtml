@@ -1,0 +1,13 @@
+﻿@model System.DateTime?
+@{
+    string name = ViewData.TemplateInfo.HtmlFieldPrefix;
+    string id = name.Replace(".", "_").Replace("[", "_").Replace("]", "_");
+}
+@if(Model.HasValue)
+{
+    @Html.TextBox("", string.Format("{0:MM/dd/yyyy HH:mm}", Model.Value), new { type = "datetime" })
+}
+else
+{
+    @Html.TextBox("", null, new { type = "datetime" })
+}

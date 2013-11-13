@@ -1,0 +1,55 @@
+﻿@model IEnumerable<HomeManagement.Web.Models.PumpingViewModel>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>
+    Index</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            Time
+        </th>
+        <th>
+            Duration
+        </th>
+        <th>
+            Amount
+        </th>
+        <th>
+            Fortify
+        </th>
+        <th>
+            Comment
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a href="@Url.Action("Edit", new { item.Id })">
+                    @item.StartTime.ToString("M/d/yy hh:mm tt")
+                    @if (item.EndTime != null)
+                    {
+                        <text> - </text>
+                        @item.EndTime.Value.ToString("hh:mm tt")
+                    }
+                </a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Milliliters) mils
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FormulaAmount) tsp
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BreastfeedingComments)
+            </td>
+        </tr>
+    }
+</table>
