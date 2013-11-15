@@ -1,0 +1,16 @@
+﻿@model System.Boolean?
+@{
+    string name = ViewData.TemplateInfo.HtmlFieldPrefix;
+    string id = name.Replace(".", "_").Replace("[", "_").Replace("]", "_");
+    string notSetId = string.Format("{0}_notset", id);
+    string trueId = string.Format("{0}_true", id);
+    string falseId = string.Format("{0}_false", id);
+}
+<div id="radio" class="radioset">
+    @Html.RadioButton("", "", Model == null, new { id = notSetId })
+    <label for="@notSetId">Not Set</label>
+    @Html.RadioButton("", "true", Model == true, new { id = trueId })
+    <label for="@trueId">Yes</label>
+    @Html.RadioButton("", "false", Model == false, new { id = falseId })
+    <label for="@falseId">No</label>
+</div>

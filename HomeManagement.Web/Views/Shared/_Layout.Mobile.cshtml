@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    @Styles.Render("~/Content/Mobile/css", "~/Content/jquerymobile/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script>
+        $(document).ready(function () {
+            $.mobile.ajaxEnabled = false;
+        });
+    </script>
+</head>
+<body>
+    <div data-role="page" data-theme="b">
+        <div data-role="header" data-theme="b">
+            <h1>@ViewBag.Title</h1>
+            @if (ViewBag.ParentController != null && ViewBag.ParentAction != null)
+            {
+                @Html.ActionLink("Back", (string)ViewBag.ParentAction, (string)ViewBag.ParentController, null, new { data_icon = "arrow-l", data_iconpos = "left" })
+            }
+            @if (IsSectionDefined("Header"))
+            {
+                @RenderSection("Header")
+            }
+        </div>
+        <div data-role="content" data-theme="b">
+            @RenderBody()
+        </div>
+        <div data-role="footer" data-theme="b">
+            @Html.Partial("_ViewSwitcher")
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jquerymobile")
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

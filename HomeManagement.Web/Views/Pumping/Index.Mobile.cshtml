@@ -1,0 +1,44 @@
+﻿@model IEnumerable<HomeManagement.Web.Models.PumpingViewModel>
+@{
+    ViewBag.Title = "All Pumpings";
+    ViewBag.ParentController = "Home";
+    ViewBag.ParentAction = "Index";
+}
+@section Header
+{
+    @Html.ActionLink("Create", "Create", "Pumping", null, new { @class = "ui-bnt-right", data_icon = "plus", data_iconpos = "right" })
+}
+
+<ul data-role="listview" data-filter="true" data-filter-theme="b">
+    @foreach (var item in Model)
+    {
+        <li><a href="@Url.Action("Edit", new { item.Id })">
+            <h2>@item.StartTime.ToString("M/d/yy hh:mm tt")
+                @if (item.EndTime != null)
+                {
+                    <text> - </text>
+                    @item.EndTime.Value.ToString("hh:mm tt")
+                }
+            </h2>
+            @if (item.Duration != null)
+            {
+                <p>
+                    @item.Duration
+                </p>
+            }
+            <p>
+                @if (item.Milliliters != null)
+                {
+                    @Html.DisplayFor(m => item.Milliliters) <text> mils - </text>
+                }
+                @Html.DisplayFor(m => item.BreastfeedingComments)
+            </p>
+            @if (item.FormulaAmount != null)
+            {
+                <p>
+                    @Math.Round(item.FormulaAmount.Value, 2) tsp
+                </p>
+            }
+        </a></li>
+    }
+</ul>

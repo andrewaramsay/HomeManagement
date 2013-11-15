@@ -32,6 +32,7 @@
     </div>
     <footer>
             <div class="content-wrapper">
+                @Html.Partial("_ViewSwitcher")
                 <div class="float-left">
                     <p>&copy; 2013 - Home Management</p>
                 </div>
@@ -39,9 +40,6 @@
         </footer>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryui")
-    <script>
-        $('input[type=datetime]').datetimepicker()
-    </script>
     @RenderSection("Scripts", false)
 </body>
 </html>
