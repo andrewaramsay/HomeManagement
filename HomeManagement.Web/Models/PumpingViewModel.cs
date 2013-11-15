@@ -38,13 +38,13 @@ namespace HomeManagement.Web.Models
 
         public int Id { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-ddTHH:mm:ss.fffffffzzz}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy HH:mm}", ApplyFormatInEditMode = true)]
         public DateTime StartTime { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-ddTHH:mm:ss.fffffffzzz}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy HH:mm}", ApplyFormatInEditMode = true)]
         public DateTime? EndTime { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-ddTHH:mm:ss.fffffffzzz}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy HH:mm}", ApplyFormatInEditMode = true)]
         public DateTime? FortifyTime { get; set; }
 
         public string Duration

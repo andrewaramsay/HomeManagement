@@ -1,2 +1,2 @@
 ﻿@model System.DateTime?
-@Html.TextBoxFor(m => m)
+@Html.TextBoxFor(m => m, "{0:yyyy-MM-ddTHH:mm:ss.fffffffzzz}", new { type = "datetime" })
