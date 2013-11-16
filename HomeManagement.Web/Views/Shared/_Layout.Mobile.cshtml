@@ -27,10 +27,10 @@
         </div>
         <div data-role="header" data-theme="b">
             <h1>@ViewBag.Title</h1>
-            <a href="#mainmenu" data-icon="grid" data-iconpos="notext">Menu</a> @*@if (ViewBag.ParentController != null && ViewBag.ParentAction != null)
+            @if (ViewBag.ParentController != null && ViewBag.ParentAction != null)
             {
                 @Html.ActionLink("Back", (string)ViewBag.ParentAction, (string)ViewBag.ParentController, null, new { data_icon = "arrow-l", data_iconpos = "left" })
-            }*@
+            }
             @if (IsSectionDefined("Header"))
             {
                 @RenderSection("Header")

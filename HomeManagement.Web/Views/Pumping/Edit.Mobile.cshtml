@@ -1,4 +1,8 @@
 ﻿@model HomeManagement.Web.Models.PumpingViewModel
+@{
+    ViewBag.ParentController = "Pumping";
+    ViewBag.ParentAction = "Index";
+}
 @section Scripts 
 {
     @Scripts.Render("~/bundles/jqueryval")
