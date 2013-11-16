@@ -1,18 +1,18 @@
 ﻿@model HomeManagement.Web.Models.PumpingViewModel
-@{
-    ViewBag.ParentController = "Pumping";
-    ViewBag.ParentAction = "Index";
-}
-@section Header
-{
-    @if (ViewBag.EmitModelId == true)
-    {
-        @Html.ActionLink("Delete", "Delete", "Pumping", new { Model.Id }, new { @class = "ui-bnt-right", data_icon = "delete", data_iconpos = "right" })
-    }
-}
 @section Scripts 
 {
     @Scripts.Render("~/bundles/jqueryval")
+}
+@section Menu
+{
+    @if (ViewBag.EmitModelId == true)
+    {
+        <ul data-role="listview" id="indexMenu">
+            <li data-role="list-divider">
+                Actions</li>
+            <li>@Html.ActionLink("Delete", "Delete", "Pumping", new { Model.Id }, null)</li>
+        </ul>
+    }
 }
 @using (Html.BeginForm())
 {

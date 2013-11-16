@@ -1,44 +1,51 @@
 ﻿@model IEnumerable<HomeManagement.Web.Models.PumpingViewModel>
 @{
     ViewBag.Title = "All Pumpings";
-    ViewBag.ParentController = "Home";
-    ViewBag.ParentAction = "Index";
 }
 @section Header
 {
     @Html.ActionLink("Create", "Create", "Pumping", null, new { @class = "ui-bnt-right", data_icon = "plus", data_iconpos = "right" })
 }
-
+@section Menu
+{
+    <ul data-role="listview" id="indexMenu">
+        <li data-role="list-divider">
+            Actions</li>
+        <li>@Html.ActionLink("Create", "Create", "Pumping")</li>
+    </ul>
+}
 <ul data-role="listview" data-filter="true" data-filter-theme="b">
     @foreach (var item in Model)
     {
-        <li><a href="@Url.Action("Edit", new { item.Id })">
-            <h2>@item.StartTime.ToString("M/d/yy hh:mm tt")
-                @if (item.EndTime != null)
+        <li>
+            <a href="@Url.Action("Edit", new { item.Id })">
+                <h2>@item.StartTime.ToString("M/d/yy hh:mm tt")
+                    @if (item.EndTime != null)
+                    {
+                        <text> - </text>
+                        @item.EndTime.Value.ToString("hh:mm tt")
+                    }
+                </h2>
+                @if (item.Duration != null)
                 {
-                    <text> - </text>
-                    @item.EndTime.Value.ToString("hh:mm tt")
+                    <p>
+                        @item.Duration
+                    </p>
                 }
-            </h2>
-            @if (item.Duration != null)
-            {
                 <p>
-                    @item.Duration
+                    @if (item.Milliliters != null)
+                    {
+                        @Html.DisplayFor(m => item.Milliliters) <text> mils - </text>
+                    }
+                    @Html.DisplayFor(m => item.BreastfeedingComments)
                 </p>
-            }
-            <p>
-                @if (item.Milliliters != null)
+                @if (item.FormulaAmount != null)
                 {
-                    @Html.DisplayFor(m => item.Milliliters) <text> mils - </text>
+                    <p>
+                        @Math.Round(item.FormulaAmount.Value, 2) tsp
+                    </p>
                 }
-                @Html.DisplayFor(m => item.BreastfeedingComments)
-            </p>
-            @if (item.FormulaAmount != null)
-            {
-                <p>
-                    @Math.Round(item.FormulaAmount.Value, 2) tsp
-                </p>
-            }
-        </a></li>
+            </a>
+        </li>
     }
 </ul>
