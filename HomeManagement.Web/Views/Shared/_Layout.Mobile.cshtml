@@ -15,16 +15,6 @@
 </head>
 <body>
     <div data-role="page" data-theme="b">
-        <div data-role="panel" data-theme="b" class="ui-hm-mainmenu">
-            <ul data-role="listview">
-                <li data-role="list-divider">
-                    Navigation</li>
-                <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                <li>@Html.ActionLink("Pumping", "Index", "Pumping")</li>
-            </ul>
-            <p />
-            @RenderSection("Menu", required: false)
-        </div>
         <div data-role="header" data-theme="b">
             <h1>@ViewBag.Title</h1>
             @if (ViewBag.ParentController != null && ViewBag.ParentAction != null)
@@ -41,6 +31,16 @@
         </div>
         <div data-role="footer" data-theme="b">
             @Html.Partial("_ViewSwitcher")
+        </div>
+        <div data-role="panel" data-theme="b" class="ui-hm-mainmenu">
+            <ul data-role="listview">
+                <li data-role="list-divider">
+                    Navigation</li>
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Pumping", "Index", "Pumping")</li>
+            </ul>
+            <p />
+            @RenderSection("Menu", required: false)
         </div>
     </div>
     @Scripts.Render("~/bundles/jquery")

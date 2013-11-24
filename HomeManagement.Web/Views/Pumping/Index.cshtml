@@ -13,6 +13,9 @@
             Time
         </th>
         <th>
+            Fortify
+        </th>
+        <th>
             Duration
         </th>
         <th>
@@ -30,24 +33,35 @@
         <tr>
             <td>
                 <a href="@Url.Action("Edit", new { item.Id })">
-                    @item.StartTime.ToString("M/d/yy hh:mm tt")
+                    @item.StartTime.ToString("M/d/yy h:mm tt")
                     @if (item.EndTime != null)
                     {
                         <text> - </text>
-                        @item.EndTime.Value.ToString("hh:mm tt")
+                        @item.EndTime.Value.ToString("h:mm tt")
                     }
                 </a>
+            </td>
+            <td>
+                @if (item.FortifyTime != null)
+                {
+                    @item.FortifyTime.Value.ToString("h:mm tt")
+                }
+                else
+                {
+                    <text>&nbsp;</text>
+                }
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Duration)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Milliliters) mils
+                @Html.DisplayFor(modelItem => item.Milliliters) ml
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FormulaAmount) tsp
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.BreastfeedingAttempt)
                 @Html.DisplayFor(modelItem => item.BreastfeedingComments)
             </td>
         </tr>
